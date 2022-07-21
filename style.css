@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+:root {
+  --green: #00bd9d;
+  --red: #ff5e5b;
+  --yellow: rgb(231, 220, 60);
+}
+
+:before,
+:after,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--green);
+  margin: 0;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  margin: 0 auto;
+  padding: 5em 2em 0.5em;
+  background: var(--red);
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.board::before {
+  content: "Magic Board";
+  font-family: "Lobster", cursive;
+  font-size: 3.3rem;
+  color: var(--yellow);
+  display: block;
+  position: absolute;
+  top: 0;
+  margin-top: 12px;
+}
+
+.first--column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+}
+
+.container {
+  display: grid;
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  gap: 2.5em;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+}
+
+.btn {
+  padding: 0.8em 2.8em;
+  border-radius: 10px;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn:hover {
+  background-color: var(--yellow);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+.grid-element {
+  background: #e6e6e6;
+  border: 1px solid #d9d9d9;
+}
+
+.grid {
+  background: #b7b2b2;
+}
+
+.small {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.medium {
+  font-size: 0.8rem;
+  letter-spacing: 1.1px;
+}
+
+.large {
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+}
