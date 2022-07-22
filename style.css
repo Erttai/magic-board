@@ -3,7 +3,8 @@
 :root {
   --green: #00bd9d;
   --red: #ff5e5b;
-  --yellow: rgb(231, 220, 60);
+  --yellow: #e7dc3c;
+  --grey: #b7b2b2;
 }
 
 :before,
@@ -50,7 +51,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4em;
+  gap: 2em;
 }
 
 input[type="color"] {
@@ -58,6 +59,7 @@ input[type="color"] {
   width: 80px;
   height: 80px;
   border: none;
+  background-color: var(--red);
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
@@ -67,12 +69,13 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
   border: none;
   border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 3px 8px;
 }
 
 .container {
   display: grid;
-  width: 800px;
-  height: 500px;
+  width: 600px;
+  height: 400px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -80,24 +83,37 @@ input[type="color"]::-webkit-color-swatch {
 
 .btns {
   display: flex;
-  gap: 2.5em;
+  gap: 1.5em;
   margin-top: 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
 }
 
 .btn {
-  padding: 0.8em 2.8em;
-  border-radius: 10px;
+  padding: 10px 20px;
+  width: 95px;
+  border-radius: 5px;
   border: 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
 }
+
+/* .btns button {
+  width: 15%;
+} */
 
 .btn:hover {
   background-color: var(--yellow);
   cursor: pointer;
   transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+input[type="color"]:hover {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 3px 8px;
+  border-radius: 50px;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .push-right {
@@ -120,10 +136,36 @@ input[type="color"]::-webkit-color-swatch {
 
 .medium {
   font-size: 0.8rem;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
 }
 
 .large {
-  font-size: 1rem;
-  letter-spacing: 1.2px;
+  font-size: 1.2rem;
 }
+
+.active {
+  background-color: var(--yellow);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 450px;
+    height: 300px;
+  }
+
+  .btns {
+    width: 450px;
+    gap: 1em;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    width: 92px;
+    /* border-radius: 5px;
+    border: 0;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif; */
+  }
+} ;
